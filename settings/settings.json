@@ -1,0 +1,9 @@
+{
+    "features": {
+        "webEnabled": true,
+        "displayEnabled": true
+    },
+    "logging": {
+        "level": "DEBUG"
+    }
+}
