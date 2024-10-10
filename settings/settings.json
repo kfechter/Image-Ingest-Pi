@@ -1,7 +1,7 @@
 {
     "features": {
         "webEnabled": true,
-        "displayEnabled": true
+        "displayEnabled": false
     },
     "logging": {
         "level": "DEBUG"

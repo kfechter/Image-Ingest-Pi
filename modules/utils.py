@@ -2,6 +2,12 @@ import os
 import uuid
 import getpass
 
+try:
+    import dbus
+    dbus_enabled = True
+except ImportError:
+    dbus_enabled = False
+
 PI_MODEL_PATH = "/sys/firmware/devicetree/base/model"
 
 def on_pi():
@@ -35,3 +41,11 @@ def get_logger_params(on_pi):
     else:
         user = str(getpass.getuser())
     return uuid_val, user
+
+def restart_service(logger):
+    if dbus_enabled:
+        logger.info("Restarting Service")
+        sysbus = dbus.SystemBus()
+        systemd1 = sysbus.get_object('org.freedesktop.systemd1', '/org/freedesktop/systemd1')
+        manager = dbus.Interface(systemd1, 'org.freedesktop.systemd1.Manager')
+        job = manager.RestartUnit('ingest.service', 'fail')

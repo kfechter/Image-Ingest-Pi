@@ -1,0 +1,10 @@
+[Unit]
+Description=Streaming Camera Service
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=python3 /home/pi/Image-Ingest-Pi/injest_app.py
+
+[Install]
+WantedBy=multi-user.target
