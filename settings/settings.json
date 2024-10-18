@@ -1,6 +1,5 @@
 {
     "features": {
-        "webEnabled": true,
         "displayEnabled": false
     },
     "logging": {
