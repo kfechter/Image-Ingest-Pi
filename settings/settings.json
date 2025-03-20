@@ -1,8 +1,12 @@
 {
     "features": {
-        "displayEnabled": false
+        "displayEnabled": false,
+        "zmqServerEnabled": false
+    },
+    "applicationSettings": {
+        "ingestionDestinationPath": ""
     },
     "logging": {
-        "level": "DEBUG"
+        "level": "VERBOSE"
     }
 }

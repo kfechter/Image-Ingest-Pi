@@ -5,10 +5,10 @@ from modules.utils import on_pi, get_logger_params, on_windows
 from ..settings.settings import save_config
 
 class ZMQ_Server:
-    def __init__(self):
+    def __init__(self, logger_instance=None):
         print("INIT")
 
-        self.logger = None
+        self.logger = logger_instance
         self.ON_PI = on_pi()
         self.UUID_VAL, self.USER = get_logger_params(self.ON_PI)
 
